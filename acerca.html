@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cómo funciona · CazaPromo</title>
+  <meta name="description" content="Cómo CazaPromo encuentra ofertas reales, aviso de afiliados y política de privacidad.">
+  <meta property="og:image" content="https://cazapromo.com/assets/marca/og.jpg">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/marca/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/marca/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,700;0,800;1,800&display=swap">
+  <link rel="stylesheet" href="assets/estilos.css">
+  <script>try { if (localStorage.getItem("cp-tema") === "oscuro") document.documentElement.dataset.tema = "oscuro"; } catch (e) {}</script>
+</head>
+<body>
+  <header class="barra">
+    <div class="contenedor">
+      <div class="barra-fila">
+        <a class="marca" href="./" aria-label="CazaPromo, inicio"><img src="assets/marca/logo-horizontal.webp" alt="CazaPromo" width="161" height="46"></a>
+        <form class="buscar" action="./" role="search"><span class="sr">Buscar ofertas</span>
+          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input name="q" type="search" placeholder="Buscar ofertas, tiendas, cupones…" autocomplete="off" enterkeyhint="search" aria-label="Buscar ofertas">
+        </form>
+        <div class="barra-acciones">
+          <button class="boton boton-sec boton-icono" id="tema" type="button" aria-label="Cambiar tema"></button>
+          <a id="unirse" href="#" target="_blank" rel="noopener" hidden></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <article class="texto-largo">
+      <img src="assets/marca/logo-principal.webp" alt="CazaPromo" width="280" height="172" style="display:block;margin:0 auto">
+      <h1>Así cazamos las ofertas</h1>
+      <p>CazaPromo vigila precios de tiendas colombianas e internacionales y publica solo las bajadas que valen la pena. Cada producto guarda su <strong>historial de precio</strong>, así sabes si el descuento es real o si el precio "antes" fue inflado.</p>
+      <ol class="pasos">
+        <li><strong>Vigilamos</strong>Revisamos los catálogos de las tiendas varias veces al día y guardamos cada precio que vemos.</li>
+        <li><strong>Comparamos</strong>Una oferta entra solo si el precio bajó de verdad: frente al de ayer, a su promedio o a su mínimo histórico.</li>
+        <li><strong>Te avisamos</strong>La publicamos aquí, en el grupo de WhatsApp y en nuestras redes, con el cupón si existe.</li>
+      </ol>
+      <p>Nosotros no vendemos nada: el botón <strong>Ver oferta</strong> te lleva a la tienda, y allí haces la compra como siempre. Nunca te pediremos datos de pago ni contraseñas.</p>
+
+      <h2 id="afiliados">Aviso de afiliados</h2>
+      <p>Algunos enlaces de CazaPromo son <strong>enlaces de afiliado</strong>: si compras a través de ellos, la tienda nos puede pagar una comisión. A ti no te cuesta nada extra y el precio es el mismo. Esas comisiones son las que mantienen el sitio y los grupos.</p>
+      <p><strong>Como afiliado de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables.</strong></p>
+      <p>Los precios y la disponibilidad son exactos a la fecha y hora indicadas y pueden cambiar. El precio que se cobra es el que muestra la tienda al momento de pagar. Los precios en dólares se muestran también en pesos con la TRM del día, solo como referencia.</p>
+
+      <h2 id="privacidad">Privacidad</h2>
+      <p>No necesitas cuenta para usar CazaPromo. No usamos cookies de publicidad. Las ofertas que guardas con el ❤️ y el tema claro u oscuro se quedan solo en tu navegador.</p>
+      <p>Cuando abres una oferta, sales a la tienda y aplican sus propias políticas de privacidad. Si nos escribes por WhatsApp, usamos tu número solo para responderte y enviarte las alertas que pidas; puedes escribir <strong>BAJA</strong> para dejar de recibirlas.</p>
+      <p>Detalles: <a href="privacidad.html">política de privacidad</a> · <a href="eliminar-datos.html">eliminar mis datos</a>.</p>
+
+      <h2 id="contacto">Contacto</h2>
+      <p>¿Viste una promo o encontraste un error en un precio? Escríbenos por nuestras redes:</p>
+      <div class="comunidad" id="contacto-redes" style="max-width:360px"></div>
+    </article>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie-legal" style="border:0;margin:0;padding:0">
+        <div class="redes" id="pie-redes" style="margin-bottom:12px"></div>
+        <p id="pie-datos"></p>
+        <p>© CazaPromo · Ofertas de juegos con datos de CheapShark.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/comun.js"></script>
+  <script>
+    CP.datos().then((d) => {
+      CP.marco(d);
+      document.getElementById("contacto-redes").innerHTML = CP.redes(d.sitio || {}).map((r) => CP.botonRed(r)).join("");
+    }).catch(() => {});
+  </script>
+</body>
+</html>

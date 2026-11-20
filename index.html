@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CazaPromo · Ofertas, cupones y bajadas de precio en Colombia</title>
+  <meta name="description" content="Ofertas, cupones y bajadas de precio en tiendas de Colombia e internacionales, con historial de precio real para saber si de verdad es una ganga.">
+  <meta property="og:title" content="CazaPromo · Cazamos las bajadas de precio por ti">
+  <meta property="og:description" content="Ofertas y cupones verificados en Colombia, con historial de precio. Únete a nuestro grupo de WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://cazapromo.com/assets/marca/og.jpg">
+  <meta property="og:url" content="https://cazapromo.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/marca/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/marca/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,700;0,800;1,800&display=swap">
+  <link rel="stylesheet" href="assets/estilos.css">
+  <script>try { if (localStorage.getItem("cp-tema") === "oscuro") document.documentElement.dataset.tema = "oscuro"; } catch (e) {}</script>
+</head>
+<body>
+  <header class="barra">
+    <div class="contenedor">
+      <div class="barra-fila">
+        <a class="marca" href="./" aria-label="CazaPromo, inicio"><img src="assets/marca/logo-horizontal.webp" alt="CazaPromo" width="161" height="46"></a>
+        <label class="buscar"><span class="sr">Buscar ofertas</span>
+          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="buscar" type="search" placeholder="Buscar ofertas, tiendas, cupones…" autocomplete="off" enterkeyhint="search">
+        </label>
+        <div class="barra-acciones">
+          <a class="boton boton-sec boton-chico solo-escritorio" href="acerca.html">¿Cómo funciona?</a>
+          <button class="boton boton-sec boton-icono" id="tema" type="button" aria-label="Cambiar tema"></button>
+          <a id="unirse" href="#" target="_blank" rel="noopener" hidden></a>
+        </div>
+      </div>
+      <nav class="pestanas" id="pestanas" aria-label="Secciones"></nav>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <section class="portada" aria-labelledby="titular">
+      <div>
+        <h1 id="titular">Cazamos las <span>bajadas de precio</span> por ti</h1>
+        <p>Vigilamos tiendas de Colombia y del exterior todo el día. Te mostramos cada oferta con su <strong>historial de precio real</strong>, para que sepas si de verdad es una ganga.</p>
+        <div class="cifras" id="cifras" aria-live="polite"></div>
+      </div>
+      <img class="mascota" src="assets/marca/mascota.webp" alt="" width="210" height="157">
+    </section>
+
+    <nav class="categorias" id="categorias" aria-label="Categorías"></nav>
+
+    <div class="diseno">
+      <section aria-labelledby="titulo-feed">
+        <div class="feed-cabeza">
+          <div>
+            <h2 id="titulo-feed">Lo último en ofertas</h2>
+            <p id="estado" class="estado">Cargando ofertas…</p>
+          </div>
+          <label class="orden"><span class="sr">Ordenar</span>
+            <select id="orden">
+              <option value="recientes">Más recientes</option>
+              <option value="descuento">Mayor descuento</option>
+              <option value="ahorro">Mayor ahorro</option>
+              <option value="precio">Menor precio</option>
+            </select>
+          </label>
+        </div>
+        <div class="rejilla" id="ofertas"></div>
+        <div class="mas"><button class="boton boton-sec" id="mas" type="button" hidden>Ver más ofertas</button></div>
+      </section>
+
+      <aside class="lateral" aria-label="Más de CazaPromo">
+        <section class="caja" id="caja-top" hidden>
+          <h2>🔥 Top descuentos</h2>
+          <ol class="top" id="top"></ol>
+        </section>
+        <section class="caja" id="caja-tiendas" hidden>
+          <h2>🏪 Tiendas</h2>
+          <div class="tiendas" id="tiendas"></div>
+        </section>
+        <section class="caja" id="caja-comunidad" hidden>
+          <h2>📣 Comunidad</h2>
+          <p class="ayuda" style="margin-top:-6px">Las mejores ofertas llegan primero a nuestros grupos.</p>
+          <div class="comunidad" id="comunidad"></div>
+        </section>
+        <section class="caja alerta-caja">
+          <img src="assets/marca/mascota-rostro.webp" alt="" width="120" height="61">
+          <h2 style="justify-content:center">¿Esperas que algo baje?</h2>
+          <p>Cada producto tiene su historial de precio. Ábrelo y mira si hoy es buen momento para comprar.</p>
+          <a class="boton boton-morado" href="acerca.html">Así cazamos las ofertas</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <button class="boton boton-marca aviso-nuevas" id="aviso-nuevas" type="button" hidden></button>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie-grid">
+        <div>
+          <img src="assets/marca/logo-horizontal.webp" alt="CazaPromo" width="154" height="44" loading="lazy">
+          <p>Ofertas, cupones y bajadas de precio en Colombia, con historial real para que compres en el mejor momento.</p>
+          <div class="redes" id="pie-redes"></div>
+        </div>
+        <div>
+          <h3>CazaPromo</h3>
+          <ul>
+            <li><a href="acerca.html">¿Cómo funciona?</a></li>
+            <li><a href="acerca.html#afiliados">Aviso de afiliados</a></li>
+            <li><a href="privacidad.html">Privacidad</a></li>
+            <li><a href="eliminar-datos.html">Eliminar mis datos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Secciones</h3>
+          <ul>
+            <li><a href="./?ver=minimos">Mínimos históricos</a></li>
+            <li><a href="./?ver=cupones">Cupones</a></li>
+            <li><a href="./?ver=gratis">Gratis</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pie-legal">
+        <p id="pie-datos"></p>
+        <p>Algunos enlaces son de afiliado: si compras por ellos podemos recibir una comisión, sin costo extra para ti. Como afiliado de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables. Los precios y la disponibilidad pueden cambiar: confírmalos en la tienda antes de pagar.</p>
+        <p>Ofertas de juegos con datos de CheapShark. © CazaPromo</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/comun.js"></script>
+  <script src="assets/inicio.js"></script>
+</body>
+</html>

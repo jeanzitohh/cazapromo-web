@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oferta · CazaPromo</title>
+  <meta name="description" content="Precio de hoy, historial de precio real y cupones en CazaPromo.">
+  <meta property="og:image" content="https://cazapromo.com/assets/marca/og.jpg">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/marca/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/marca/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,700;0,800;1,800&display=swap">
+  <link rel="stylesheet" href="assets/estilos.css">
+  <script>try { if (localStorage.getItem("cp-tema") === "oscuro") document.documentElement.dataset.tema = "oscuro"; } catch (e) {}</script>
+</head>
+<body>
+  <header class="barra">
+    <div class="contenedor">
+      <div class="barra-fila">
+        <a class="marca" href="./" aria-label="CazaPromo, inicio"><img src="assets/marca/logo-horizontal.webp" alt="CazaPromo" width="161" height="46"></a>
+        <form class="buscar" action="./" role="search"><span class="sr">Buscar ofertas</span>
+          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input name="q" type="search" placeholder="Buscar ofertas, tiendas, cupones…" autocomplete="off" enterkeyhint="search" aria-label="Buscar ofertas">
+        </form>
+        <div class="barra-acciones">
+          <a class="boton boton-sec boton-chico solo-escritorio" href="acerca.html">¿Cómo funciona?</a>
+          <button class="boton boton-sec boton-icono" id="tema" type="button" aria-label="Cambiar tema"></button>
+          <a id="unirse" href="#" target="_blank" rel="noopener" hidden></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <nav class="migas" aria-label="Ruta"><a href="./">Ofertas</a> <span id="miga-grupo"></span> › <span id="miga-titulo"></span></nav>
+    <div id="producto"><p class="estado">Cargando…</p></div>
+    <section id="parecidas" hidden>
+      <div class="feed-cabeza"><h2>Ofertas parecidas</h2></div>
+      <div class="rejilla" id="parecidas-lista"></div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie-grid">
+        <div>
+          <img src="assets/marca/logo-horizontal.webp" alt="CazaPromo" width="154" height="44" loading="lazy">
+          <p>Ofertas, cupones y bajadas de precio en Colombia, con historial real para que compres en el mejor momento.</p>
+          <div class="redes" id="pie-redes"></div>
+        </div>
+        <div>
+          <h3>CazaPromo</h3>
+          <ul>
+            <li><a href="acerca.html">¿Cómo funciona?</a></li>
+            <li><a href="acerca.html#afiliados">Aviso de afiliados</a></li>
+            <li><a href="privacidad.html">Privacidad</a></li>
+            <li><a href="eliminar-datos.html">Eliminar mis datos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Secciones</h3>
+          <ul>
+            <li><a href="./?ver=minimos">Mínimos históricos</a></li>
+            <li><a href="./?ver=cupones">Cupones</a></li>
+            <li><a href="./?ver=gratis">Gratis</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pie-legal">
+        <p id="pie-datos"></p>
+        <p>Algunos enlaces son de afiliado: si compras por ellos podemos recibir una comisión, sin costo extra para ti. Como afiliado de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables. Los precios y la disponibilidad pueden cambiar: confírmalos en la tienda antes de pagar.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/comun.js"></script>
+  <script src="assets/producto.js"></script>
+</body>
+</html>
